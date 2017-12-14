@@ -356,7 +356,7 @@ duration_check_star = duration_check %>%
 duration_plot = ggplot(duration_check_star, aes(x = schoolname_abbreviation, y = duration_min_avg, fill = accept_label, group = accept_label)) + 
   geom_bar(stat = "identity", position = "dodge") + 
   geom_text(aes(label = round(duration_min_avg,0)), fontface = "bold", position = position_dodge(0.9), vjust = -1, size = 4) + 
-  labs(x = "", y = "Minutes", title = "Average Minutes to STAR ES by Accepting a Seat at STAR ES") + 
+  labs(x = "", y = "Minutes", title = "Average Minutes to STAR ES by\nAccepting a Seat at STAR ES") + 
   scale_y_continuous(limits = c(0,30)) +
   scale_fill_manual(name = "",values = c("#255694", "#E2842A")) + 
   theme(text = element_text(family = "Calibri", face = "bold", size = 14),
@@ -364,7 +364,7 @@ duration_plot = ggplot(duration_check_star, aes(x = schoolname_abbreviation, y =
         panel.background = element_blank(),
         panel.border = element_blank())
 
-#ggsave("Time Plot.jpeg", plot = duration_plot, path = "plots/", height = 8, width = 5)
+ggsave("Time Plot.jpeg", plot = duration_plot, path = "plots/", height = 8, width = 5)
 
 star_es_t2 = star_inf_t2 %>% filter(schoolname_abbreviation == "STA H ES")
 inf_es_t2 = star_inf_t2 %>% filter(schoolname_abbreviation == "INF ES")
