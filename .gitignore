@@ -1,0 +1,3 @@
+#ignore certain files
+/student-recruitment/plots/*
+/student-recruitment/OperatingCharters.3.18.2016.xlsx
